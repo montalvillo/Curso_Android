@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_launcher_background"
+        android:id="@+id/imageView"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Titulo"
+            android:textColor="#e22626"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:textSize="27dp"
+            android:id="@+id/tituloText"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genero"
+            android:fontFamily="sans-serif"
+            android:textStyle="italic"
+            android:textSize="20dp"
+            android:id="@+id/generoText"
+            android:padding="10dp"
+            android:shadowColor="#000"
+            android:shadowRadius="5"
+            android:shadowDx="3"
+            android:shadowDy="3"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
