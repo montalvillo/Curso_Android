@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrimerFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/motos_zorrilla"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <TextView
+
+            android:id="@+id/pais"
+            android:text="@string/pais"
+            android:textColor="@color/blanco"
+            android:background="@color/Verde"
+            android:textSize="@dimen/big"
+            android:padding="@dimen/padding"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/ciudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ciudad"
+            android:textSize="@dimen/big"
+            android:layout_gravity="center"
+            android:layout_marginTop="380dp"/>
+    </LinearLayout>
+
+</FrameLayout>

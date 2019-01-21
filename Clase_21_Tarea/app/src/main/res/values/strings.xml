@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Clase_21_Tarea</string>
+
+    <string name="pais">Pais Castellano España</string>
+
+    <string name="ciudad">Ciudad de Valladolid</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
