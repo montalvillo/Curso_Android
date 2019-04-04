@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 
 public class miClaseMeteo extends AsyncTask {
@@ -23,9 +24,12 @@ public class miClaseMeteo extends AsyncTask {
     public Activity contex;
     public String urlString = null;
 
-    public String nombre = null;
-    public String icon = null;
-    private String temperatura = null;
+   // public String nombre = null;
+   // public String icon = null;
+   // private String temperatura = null;
+
+
+    ArrayList<Ciudades> miListado = new ArrayList<Ciudades>();
 
     @Override
     protected Object doInBackground(Object[] objects) {
@@ -69,15 +73,32 @@ try {
 
                 org.json.simple.JSONArray ciudades = (JSONArray) jsonObject.get("ciudades");
 
+                ArrayList <String> miListado = new ArrayList <>();
+
                 for(Object o: ciudades){
                     JSONObject ciudadJSON = (JSONObject) o;
                     String ciudad = (String) ciudadJSON.get("nombre");
                     String temperatura = (String) ciudadJSON.get("temperatura");
+                    String icon = (String) ciudadJSON.get("icon");
                     Log.d(TAG, "Ciudad " + ciudad);
                     Log.d(TAG, "Temperatura " + temperatura);
+                    Log.d(TAG,"Icono " + icon);
 
+
+                    miListado.add(ciudad);
+                    miListado.add(temperatura);
+                    miListado.add(icon);
+
+                    Log.d(TAG,"ciudad nueva"+ miListado);
+
+                    comprobarCiudades();
 
                 }
+
+
+
+
+
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -88,7 +109,36 @@ try {
 
 httpURLConnection.disconnect();
 
+
+
+    }
+
+    private void comprobarCiudades() {
+
+
+
+        for (Object nombre : miListado){
+
+        }
+
+
+
     }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
