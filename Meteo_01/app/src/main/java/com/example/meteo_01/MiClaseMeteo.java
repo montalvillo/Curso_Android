@@ -28,7 +28,7 @@ public class MiClaseMeteo extends AsyncTask {
     // public String icon = null;
     // private String temperatura = null;
 
-    ArrayList <String> arrayDeCiudades = new ArrayList <String>();
+    ArrayList <Ciudad> arrayDeCiudades = new ArrayList <Ciudad>();
 
     @Override
     protected Object doInBackground(Object[] objects) {
@@ -86,15 +86,17 @@ public class MiClaseMeteo extends AsyncTask {
                     //ciudad toma el valor del nombre del JSON
                     String ciudad = (String) ciudadJSON.get("nombre");
                     String icon = (String) ciudadJSON.get("icon");
-                    String temperatura = (String) ciudadJSON.get("temperatura");
+                     String temperatura = (String) ciudadJSON.get("temperatura");
 
                     Log.d(TAG, "Ciudad " + ciudad);
                     Log.d(TAG,"Icon " +icon);
                     Log.d(TAG,"Temperatura "+ temperatura);
 
-                    arrayDeCiudades.add(ciudad);
-                   arrayDeCiudades.add(icon);
-                   arrayDeCiudades.add(temperatura);
+                    Ciudad nueva  = new Ciudad(ciudad,icon,temperatura);
+                  //arrayDeCiudades.add(new Ciudad(ciudad,icon,temperatura));
+                    arrayDeCiudades.add(nueva);
+
+
                 }
              comprobarCiudades();
 
@@ -112,14 +114,16 @@ public class MiClaseMeteo extends AsyncTask {
 
     private void comprobarCiudades() {
 
-        for (String arrayDeCiudade : arrayDeCiudades) {
+       for (Ciudad mia  : arrayDeCiudades) {
 
-          Log.d(TAG,"Este es el array de ciudades "+ arrayDeCiudade);
+          Log.d(TAG,"Este es el array de ciudades Ciudad "+ mia.ciudad);
+           Log.d(TAG,"Este es el array de ciudades Icon "+ mia.icon);
+           Log.d(TAG,"Este es el array de ciudades Temperatura "+ mia.temperatura);
 
         }
 
-    }
-}
+    }}
+
 
 
 
